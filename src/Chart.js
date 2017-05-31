@@ -5,6 +5,7 @@ import { LayoutAnimation, StyleSheet, View } from 'react-native';
 import BarChart from './BarChart';
 import LineChart from './LineChart';
 import PieChart from './PieChart';
+import BarChartCustom from './BarChartCustom';
 import YAxis from './yAxis';
 import XAxis from './xAxis';
 import * as C from './constants';
@@ -162,7 +163,7 @@ export default class Chart extends Component<void, any, any> {
 	}
 
 	render() {
-		const components = { 'line': LineChart, 'bar': BarChart, 'pie': PieChart };
+		const components = { 'line': LineChart, 'bar': BarChart, 'pie': PieChart, 'bar2': BarChartCustom };
 		const axisAlign = (this.props.type === 'line') ? 'left' : 'center';
 		return (
 			<View>
