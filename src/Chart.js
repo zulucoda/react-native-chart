@@ -250,7 +250,7 @@ Chart.propTypes = {
 	yAxisShortLabel: PropTypes.bool,
 
 	// Bar chart props
-	color: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+	// color: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
 	cornerRadius: PropTypes.number,
 	// fillGradient: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])), // TODO
 	widthPercent: PropTypes.number,
