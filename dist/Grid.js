@@ -19,19 +19,16 @@ Grid=function(_Component){_inherits(Grid,_Component);function Grid(){_classCallC
 
 
 
-
 {var _this2=this;
 if(!this.props.showGrid)return null;
 var horizontalRange=[];
 var verticalRange=[];
-var xData=(0,_util.uniqueValuesInDataSets)(this.props.data||[[]],0);
-var yData=(0,_util.uniqueValuesInDataSets)(this.props.data||[[]],1);
-var horizontalSteps=yData.length<this.props.verticalGridStep?yData.length:this.props.verticalGridStep;
-var stepsBetweenVerticalLines=this.props.horizontalGridStep?Math.round(xData.length/this.props.horizontalGridStep):1;
-if(stepsBetweenVerticalLines<1)stepsBetweenVerticalLines=1;
+var data=this.props.data||[];
+var unique=(0,_util.uniqueValuesInDataSet)(data);
+var horizontalSteps=unique.length<this.props.verticalGridStep?unique.length:this.props.verticalGridStep;
 
 for(var i=horizontalSteps;i>0;i--){horizontalRange.push(i);}
-for(var _i=xData.length-1;_i>0;_i-=stepsBetweenVerticalLines){verticalRange.push(_i);}
+for(var _i=data.length-1;_i>0;_i--){verticalRange.push(_i);}
 
 var containerStyle={width:this.props.width,height:this.props.height,position:'absolute',left:0};
 
@@ -49,29 +46,29 @@ borderTopWidth:intendedLineWidth};
 
 var verticalGridStyle={
 height:this.props.height+1,
-width:this.props.width/(xData.length-1)*stepsBetweenVerticalLines,
+width:this.props.width/data.length,
 borderRightColor:this.props.gridColor,
 borderRightWidth:intendedLineWidth};
 
 
 return(
-_react2.default.createElement(_reactNative.View,{style:containerStyle,__source:{fileName:_jsxFileName,lineNumber:58}},
+_react2.default.createElement(_reactNative.View,{style:containerStyle,__source:{fileName:_jsxFileName,lineNumber:55}},
 function(){
 if(_this2.props.hideHorizontalGridLines)return null;
 return(
-_react2.default.createElement(_reactNative.View,{style:{position:'absolute',flexDirection:'column',justifyContent:'space-around'},__source:{fileName:_jsxFileName,lineNumber:62}},
-horizontalRange.map(function(_,i){return _react2.default.createElement(_reactNative.View,{key:i,style:horizontalGridStyle,__source:{fileName:_jsxFileName,lineNumber:63}});})));
+_react2.default.createElement(_reactNative.View,{style:{position:'absolute',flexDirection:'column',justifyContent:'space-around'},__source:{fileName:_jsxFileName,lineNumber:59}},
+horizontalRange.map(function(_,i){return _react2.default.createElement(_reactNative.View,{key:i,style:horizontalGridStyle,__source:{fileName:_jsxFileName,lineNumber:60}});})));
 
 
 }(),
 function(){
 if(_this2.props.hideVerticalGridLines)return null;
 return(
-_react2.default.createElement(_reactNative.View,{style:{flexDirection:'row',position:'absolute',justifyContent:'space-around'},__source:{fileName:_jsxFileName,lineNumber:70}},
-verticalRange.map(function(_,i){return _react2.default.createElement(_reactNative.View,{key:i,style:verticalGridStyle,__source:{fileName:_jsxFileName,lineNumber:71}});})));
+_react2.default.createElement(_reactNative.View,{style:{flexDirection:'row',position:'absolute',justifyContent:'space-around'},__source:{fileName:_jsxFileName,lineNumber:67}},
+verticalRange.map(function(_,i){return _react2.default.createElement(_reactNative.View,{key:i,style:verticalGridStyle,__source:{fileName:_jsxFileName,lineNumber:68}});})));
 
 
 }()));
 
 
-}}]);return Grid;}(_react.Component);Grid.propTypes={showGrid:_react.PropTypes.bool,data:_react.PropTypes.arrayOf(_react.PropTypes.arrayOf(_react.PropTypes.array)).isRequired,verticalGridStep:_react.PropTypes.number.isRequired,horizontalGridStep:_react.PropTypes.number,gridLineWidth:_react.PropTypes.number,gridColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),hideHorizontalGridLines:_react.PropTypes.bool,hideVerticalGridLines:_react.PropTypes.bool,type:_react.PropTypes.oneOf(['line','bar','pie','bar2']).isRequired};Grid.defaultProps={};exports.default=Grid;
+}}]);return Grid;}(_react.Component);Grid.propTypes={showGrid:_react.PropTypes.bool,data:_react.PropTypes.array.isRequired,verticalGridStep:_react.PropTypes.number.isRequired,gridLineWidth:_react.PropTypes.number,gridColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),hideHorizontalGridLines:_react.PropTypes.bool,hideVerticalGridLines:_react.PropTypes.bool,height:_react.PropTypes.number.isRequired,width:_react.PropTypes.number.isRequired,type:_react.PropTypes.oneOf(['line','bar','pie']).isRequired};Grid.defaultProps={};exports.default=Grid;

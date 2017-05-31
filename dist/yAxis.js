@@ -14,10 +14,7 @@ alignItems:'flex-end'}});var
 
 
 
-
 YAxis=function(_Component){_inherits(YAxis,_Component);
-
-
 
 
 
@@ -38,21 +35,6 @@ props));_this.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 _createLabelForYAxis=function(index){
 var minBound=_this.props.minVerticalBound;
 var maxBound=_this.props.maxVerticalBound;
@@ -64,17 +46,7 @@ maxBound+=_this.props.verticalGridStep;
 }
 minBound=minBound<0?0:minBound;
 var label=minBound+(maxBound-minBound)/_this.props.verticalGridStep*index;
-label=parseFloat(label.toFixed(3));
-
-if(!_this.props.yAxisUseDecimal){
 label=Math.round(label);
-}
-
-if(_this.props.yAxisShortLabel){
-label=_this.shortenLargeNumber(label,_this.props.yAxisUseDecimal);
-}
-
-
 if(_this.props.yAxisTransform&&typeof _this.props.yAxisTransform==='function'){
 label=_this.props.yAxisTransform(label);
 }
@@ -84,17 +56,18 @@ style:{
 color:_this.props.axisLabelColor,
 fontSize:_this.props.labelFontSize},
 
-key:index,__source:{fileName:_jsxFileName,lineNumber:82}},
+key:index,__source:{fileName:_jsxFileName,lineNumber:54}},
 
 label));
 
 
-};_this.state={bounds:{min:0,max:0}};return _this;}_createClass(YAxis,[{key:'shortenLargeNumber',value:function shortenLargeNumber(num,useDecimal){var digits=useDecimal?2:0;var units=['K','M','B','t','P','E','Z','Y'],decimal;for(var i=units.length-1;i>=0;i--){decimal=Math.pow(1000,i+1);if(num<=-decimal||num>=decimal){return+(num/decimal).toFixed(digits)+units[i];}}return num;}},{key:'render',value:function render()
+};_this.state={bounds:{min:0,max:0}};return _this;}_createClass(YAxis,[{key:'render',value:function render()
 
 {
 var range=[];
-var data=(0,_util.uniqueValuesInDataSets)(this.props.data||[[]],1);
-var steps=data.length<this.props.verticalGridStep?data.length:this.props.verticalGridStep;
+var data=this.props.data||[];
+var unique=(0,_util.uniqueValuesInDataSet)(data);
+var steps=unique.length<this.props.verticalGridStep?unique.length:this.props.verticalGridStep;
 for(var i=steps;i>=0;i--){range.push(i);}
 return(
 _react2.default.createElement(_reactNative.View,{
@@ -102,10 +75,10 @@ style:[
 styles.yAxisContainer,
 this.props.style||{},
 this.props.placement==='left'&&{borderRightColor:this.props.axisColor,borderRightWidth:this.props.axisLineWidth},
-this.props.placement==='right'&&{borderLeftColor:this.props.axisColor,borderLeftWidth:this.props.axisLineWidth}],__source:{fileName:_jsxFileName,lineNumber:100}},
+this.props.placement==='right'&&{borderLeftColor:this.props.axisColor,borderLeftWidth:this.props.axisLineWidth}],__source:{fileName:_jsxFileName,lineNumber:73}},
 
 
 range.map(this._createLabelForYAxis)));
 
 
-}}]);return YAxis;}(_react.Component);YAxis.propTypes={axisColor:_react.PropTypes.any,axisLineWidth:_react.PropTypes.number,data:_react.PropTypes.arrayOf(_react.PropTypes.arrayOf(_react.PropTypes.array)).isRequired,height:_react.PropTypes.number.isRequired,placement:_react.PropTypes.oneOf(['left','right']),verticalGridStep:_react.PropTypes.number.isRequired,yAxisTransform:_react.PropTypes.func,yAxisUseDecimal:_react.PropTypes.bool,yAxisShortLabel:_react.PropTypes.bool};YAxis.defaultProps={placement:'left'};exports.default=YAxis;
+}}]);return YAxis;}(_react.Component);YAxis.propTypes={axisColor:_react.PropTypes.any,axisLineWidth:_react.PropTypes.number,data:_react.PropTypes.arrayOf(_react.PropTypes.array).isRequired,height:_react.PropTypes.number.isRequired,placement:_react.PropTypes.oneOf(['left','right']),verticalGridStep:_react.PropTypes.number.isRequired,yAxisTransform:_react.PropTypes.func};YAxis.defaultProps={placement:'left'};exports.default=YAxis;
