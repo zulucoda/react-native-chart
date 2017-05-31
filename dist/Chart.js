@@ -250,7 +250,7 @@ yAxisUseDecimal:_react.PropTypes.bool,
 yAxisShortLabel:_react.PropTypes.bool,
 
 
-color:_react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string])),
+
 cornerRadius:_react.PropTypes.number,
 
 widthPercent:_react.PropTypes.number,

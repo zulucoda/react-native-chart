@@ -27,10 +27,9 @@ _this.props.data.onDataPointPress(e,dataPoint,index);
 
 _drawBar=function(_dataPoint,index){var _dataPoint2=_slicedToArray(
 _dataPoint,2),_x=_dataPoint2[0],dataPoint=_dataPoint2[1];
-var backgroundColor=_this.props.color[0]||C.BLUE;
-
-var HEIGHT=_this.props.height;
-var WIDTH=_this.props.width;
+var backgroundColor=_this.props.color||C.BLUE;
+var HEIGHT=95;
+var WIDTH=35;
 var widthPercent=_this.props.widthPercent||0.5;
 if(widthPercent>1)widthPercent=1;
 if(widthPercent<0)widthPercent=0;
@@ -45,7 +44,7 @@ maxBound+=_this.props.verticalGridStep;
 }
 
 var data=_this.props.data||[];
-var width=WIDTH/data.length*_this.props.horizontalScale*0.5*widthPercent;
+var width=WIDTH;
 var divisor=maxBound-minBound<=0?0.00001:maxBound-minBound;
 var scale=HEIGHT/divisor;
 var height=HEIGHT-(minBound*scale+(HEIGHT-dataPoint*scale));
@@ -53,15 +52,27 @@ if(height<=0)height=20;
 return(
 _react2.default.createElement(_reactNative.TouchableWithoutFeedback,{
 key:index,
-onPress:function onPress(e){return _this._handlePress(e,dataPoint,index);},__source:{fileName:_jsxFileName,lineNumber:54}},
+onPress:function onPress(e){return _this._handlePress(e,dataPoint,index);},__source:{fileName:_jsxFileName,lineNumber:53}},
 
+_react2.default.createElement(_reactNative.View,{style:{
+paddingRight:2,
+paddingLeft:2},__source:{fileName:_jsxFileName,lineNumber:57}},
+
+_react2.default.createElement(_reactNative.Text,{style:{
+textAlign:'center'},__source:{fileName:_jsxFileName,lineNumber:61}},
+dataPoint,'%'),
 _react2.default.createElement(_reactNative.View,{
 style:{
 borderTopLeftRadius:_this.props.cornerRadius||0,
 borderTopRightRadius:_this.props.cornerRadius||0,
 backgroundColor:backgroundColor,
 width:width,
-height:height},__source:{fileName:_jsxFileName,lineNumber:58}})));
+height:height},__source:{fileName:_jsxFileName,lineNumber:64}}),
+
+
+_react2.default.createElement(_reactNative.Text,{style:{
+textAlign:'center'},__source:{fileName:_jsxFileName,lineNumber:73}},
+_x))));
 
 
 
@@ -71,8 +82,8 @@ height:height},__source:{fileName:_jsxFileName,lineNumber:58}})));
 {
 var data=this.props.data||[];
 return(
-_react2.default.createElement(_reactNative.View,{ref:'container',style:[styles.default],__source:{fileName:_jsxFileName,lineNumber:74}},
-_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:75}})),
+_react2.default.createElement(_reactNative.View,{ref:'container',style:[styles.default],__source:{fileName:_jsxFileName,lineNumber:85}},
+_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:86}})),
 data.map(this._drawBar)));
 
 

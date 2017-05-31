@@ -1,5 +1,5 @@
 /* @flow */
-import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, StyleSheet, TouchableWithoutFeedback, Text } from 'react-native';
 import React, { Component } from 'react';
 import * as C from './constants';
 import Grid from './Grid';
@@ -27,10 +27,9 @@ export default class BarChart extends Component<void, any, any> {
 
 	_drawBar = (_dataPoint : [number, number], index : number) => {
 		const [_x, dataPoint] = _dataPoint;
-		const backgroundColor = this.props.color[0] || C.BLUE;
-		// the index [0] is facilitate multi-line, fix later if need be
-		const HEIGHT = this.props.height;
-		const WIDTH = this.props.width;
+		const backgroundColor = this.props.color || C.BLUE;
+		const HEIGHT = 95;
+		const WIDTH = 35;
 		let widthPercent = this.props.widthPercent || 0.5;
 		if (widthPercent > 1) widthPercent = 1;
 		if (widthPercent < 0) widthPercent = 0;
@@ -45,7 +44,7 @@ export default class BarChart extends Component<void, any, any> {
 		}
 
 		const data = this.props.data || [];
-		const width = (WIDTH / data.length * this.props.horizontalScale * 0.5) * widthPercent;
+		const width = WIDTH;
 		const divisor = (maxBound - minBound <= 0) ? 0.00001 : (maxBound - minBound);
 		const scale = HEIGHT / divisor;
 		let height = HEIGHT - ((minBound * scale) + (HEIGHT - (dataPoint * scale)));
@@ -55,15 +54,27 @@ export default class BarChart extends Component<void, any, any> {
 				key={index}
 				onPress={(e) => this._handlePress(e, dataPoint, index)}
 			>
-				<View
-					style={{
-						borderTopLeftRadius: this.props.cornerRadius || 0,
-						borderTopRightRadius: this.props.cornerRadius || 0,
-						backgroundColor,
-						width,
-						height,
-					}}
-				/>
+				<View style={{
+					paddingRight: 2,
+					paddingLeft: 2,
+				}}>
+					<Text style={{
+						textAlign: 'center',
+					}}>{dataPoint}%</Text>
+					<View
+						style={{
+							borderTopLeftRadius: this.props.cornerRadius || 0,
+							borderTopRightRadius: this.props.cornerRadius || 0,
+							backgroundColor,
+							width,
+							height
+						}}
+					/>
+					<Text style={{
+						textAlign: 'center'
+					}}>{_x}</Text>
+				</View>
+
 			</TouchableWithoutFeedback>
 		);
 	};
