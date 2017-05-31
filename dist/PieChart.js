@@ -1,4 +1,4 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src/PieChart.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _reactNative=require('react-native');
 
@@ -27,7 +27,7 @@ _handlePress=function(_e){
 };_this.state={rotation:0};_this.boundingAreas={};return _this;}_createClass(PieChart,[{key:'shouldComponentUpdate',value:function shouldComponentUpdate(props){return props.data!==this.props.data||props.height!==this.props.height||props.width!==this.props.width;}},{key:'render',value:function render()
 
 {
-if(!this.props.width||!this.props.height)return _react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:30}});
+if(!this.props.width||!this.props.height)return _react2.default.createElement(_reactNative.View,null);
 
 var COLORS=this.props.sliceColors||[
 C.BLUE,
@@ -72,10 +72,10 @@ colors.push(getColor(COLORS,i));
 startAngle+=sectionPiece;
 });
 return(
-_react2.default.createElement(_reactNative.TouchableWithoutFeedback,{onPress:this._handlePress,__source:{fileName:_jsxFileName,lineNumber:75}},
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:76}},
-_react2.default.createElement(Surface,{width:this.props.width,height:this.props.height,__source:{fileName:_jsxFileName,lineNumber:77}},
-_react2.default.createElement(Group,{originX:centerX,width:this.props.width,height:this.props.height,originY:centerY,rotation:this.state.rotation,__source:{fileName:_jsxFileName,lineNumber:78}},
+_react2.default.createElement(_reactNative.TouchableWithoutFeedback,{onPress:this._handlePress},
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(Surface,{width:this.props.width,height:this.props.height},
+_react2.default.createElement(Group,{originX:centerX,width:this.props.width,height:this.props.height,originY:centerY,rotation:this.state.rotation},
 arcs.map(function(arc,i){
 return(
 _react2.default.createElement(_Wedge2.default,_extends({
@@ -85,7 +85,7 @@ fill:colors[i],
 key:i,
 originX:centerX,
 originY:centerY},
-arc,{__source:{fileName:_jsxFileName,lineNumber:81}})));
+arc)));
 
 
 }))))));

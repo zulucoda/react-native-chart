@@ -1,4 +1,4 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName='src/Circle.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _reactNative=require('react-native');
 
@@ -23,6 +23,6 @@ Circle=function(_Component){_inherits(Circle,_Component);function Circle(){_clas
 this.props,x=_props.x,y=_props.y,radius=_props.radius;
 var path=new Path().moveTo(x,y-radius).arc(0,radius*2,radius).arc(0,radius*-2,radius).close();
 return(
-_react2.default.createElement(Shape,{d:path,stroke:this.props.stroke,fill:this.props.fill,strokeWidth:1,__source:{fileName:_jsxFileName,lineNumber:26}}));
+_react2.default.createElement(Shape,{d:path,stroke:this.props.stroke,fill:this.props.fill,strokeWidth:1}));
 
 }}]);return Circle;}(_react.Component);Circle.propTypes={radius:_react.PropTypes.number.isRequired,x:_react.PropTypes.number.isRequired,y:_react.PropTypes.number.isRequired,onPress:_react.PropTypes.func,fill:_react.PropTypes.string,stroke:_react.PropTypes.string};Circle.defaultProps={onPress:function onPress(){},radius:2,fill:C.BLACK,stroke:C.BLACK};exports.default=Circle;

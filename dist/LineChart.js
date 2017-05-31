@@ -1,4 +1,4 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src/LineChart.js';var _slicedToArray=function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[typeof Symbol==='function'?Symbol.iterator:'@@iterator'](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break;}}catch(err){_d=true;_e=err;}finally{try{if(!_n&&_i["return"])_i["return"]();}finally{if(_d)throw _e;}}return _arr;}return function(arr,i){if(Array.isArray(arr)){return arr;}else if((typeof Symbol==='function'?Symbol.iterator:'@@iterator')in Object(arr)){return sliceIterator(arr,i);}else{throw new TypeError("Invalid attempt to destructure non-iterable instance");}};}();var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _slicedToArray=function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[typeof Symbol==='function'?Symbol.iterator:'@@iterator'](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break;}}catch(err){_d=true;_e=err;}finally{try{if(!_n&&_i["return"])_i["return"]();}finally{if(_d)throw _e;}}return _arr;}return function(arr,i){if(Array.isArray(arr)){return arr;}else if((typeof Symbol==='function'?Symbol.iterator:'@@iterator')in Object(arr)){return sliceIterator(arr,i);}else{throw new TypeError("Invalid attempt to destructure non-iterable instance");}};}();var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _reactNative=require('react-native');
 
@@ -85,21 +85,21 @@ fillPath.moveTo(0,containerHeight);
 }
 if(path.path.some(isNaN))return null;
 return(
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:88}},
-_react2.default.createElement(_reactNative.View,{style:{position:'absolute'},__source:{fileName:_jsxFileName,lineNumber:89}},
-_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:90}},
-_react2.default.createElement(AnimatedShape,{d:path,stroke:_this.props.color||C.BLUE,strokeWidth:_this.props.lineWidth,__source:{fileName:_jsxFileName,lineNumber:91}}),
-_react2.default.createElement(AnimatedShape,{d:fillPath,fill:_this.props.fillColor,__source:{fileName:_jsxFileName,lineNumber:92}}))),
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_reactNative.View,{style:{position:'absolute'}},
+_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight},
+_react2.default.createElement(AnimatedShape,{d:path,stroke:_this.props.color||C.BLUE,strokeWidth:_this.props.lineWidth}),
+_react2.default.createElement(AnimatedShape,{d:fillPath,fill:_this.props.fillColor}))),
 
 
-_react2.default.createElement(_reactNative.View,{style:{position:'absolute'},__source:{fileName:_jsxFileName,lineNumber:95}},
-_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:96}})),
+_react2.default.createElement(_reactNative.View,{style:{position:'absolute'}},
+_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight})),
 
 function(){
 if(!_this.props.showDataPoint)return null;
 return(
-_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight,__source:{fileName:_jsxFileName,lineNumber:101}},
-dataPoints.map(function(d,i){return _react2.default.createElement(_Circle2.default,_extends({key:i},d,{__source:{fileName:_jsxFileName,lineNumber:102}}));})));
+_react2.default.createElement(Surface,{width:containerWidth,height:containerHeight},
+dataPoints.map(function(d,i){return _react2.default.createElement(_Circle2.default,_extends({key:i},d));})));
 
 
 }()));
@@ -110,18 +110,18 @@ dataPoints.map(function(d,i){return _react2.default.createElement(_Circle2.defau
 {
 if(_reactNative.Platform.OS==='ios'){
 return(
-_react2.default.createElement(_reactNative.View,{style:{overflow:'hidden'},__source:{fileName:_jsxFileName,lineNumber:113}},
-_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:114}})),
-_react2.default.createElement(_reactNative.Animated.View,{style:{height:this.state.height,opacity:this.state.opacity,backgroundColor:'transparent'},__source:{fileName:_jsxFileName,lineNumber:115}},
+_react2.default.createElement(_reactNative.View,{style:{overflow:'hidden'}},
+_react2.default.createElement(_Grid2.default,this.props),
+_react2.default.createElement(_reactNative.Animated.View,{style:{height:this.state.height,opacity:this.state.opacity,backgroundColor:'transparent'}},
 this._drawLine())));
 
 
 
 }
 return(
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:122}},
-_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:123}})),
-_react2.default.createElement(_reactNative.View,{style:{height:this.props.height},__source:{fileName:_jsxFileName,lineNumber:124}},
+_react2.default.createElement(_reactNative.View,null,
+_react2.default.createElement(_Grid2.default,this.props),
+_react2.default.createElement(_reactNative.View,{style:{height:this.props.height}},
 this._drawLine())));
 
 

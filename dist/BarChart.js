@@ -1,4 +1,4 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src/BarChart.js';var _slicedToArray=function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[typeof Symbol==='function'?Symbol.iterator:'@@iterator'](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break;}}catch(err){_d=true;_e=err;}finally{try{if(!_n&&_i["return"])_i["return"]();}finally{if(_d)throw _e;}}return _arr;}return function(arr,i){if(Array.isArray(arr)){return arr;}else if((typeof Symbol==='function'?Symbol.iterator:'@@iterator')in Object(arr)){return sliceIterator(arr,i);}else{throw new TypeError("Invalid attempt to destructure non-iterable instance");}};}();var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
+Object.defineProperty(exports,"__esModule",{value:true});var _slicedToArray=function(){function sliceIterator(arr,i){var _arr=[];var _n=true;var _d=false;var _e=undefined;try{for(var _i=arr[typeof Symbol==='function'?Symbol.iterator:'@@iterator'](),_s;!(_n=(_s=_i.next()).done);_n=true){_arr.push(_s.value);if(i&&_arr.length===i)break;}}catch(err){_d=true;_e=err;}finally{try{if(!_n&&_i["return"])_i["return"]();}finally{if(_d)throw _e;}}return _arr;}return function(arr,i){if(Array.isArray(arr)){return arr;}else if((typeof Symbol==='function'?Symbol.iterator:'@@iterator')in Object(arr)){return sliceIterator(arr,i);}else{throw new TypeError("Invalid attempt to destructure non-iterable instance");}};}();var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();
 var _reactNative=require('react-native');
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _constants=require('./constants');var C=_interopRequireWildcard(_constants);
@@ -52,14 +52,14 @@ if(height<=0)height=20;
 return(
 _react2.default.createElement(_reactNative.TouchableWithoutFeedback,{
 key:index,
-onPress:function onPress(e){return _this._handlePress(e,dataPoint,index);},__source:{fileName:_jsxFileName,lineNumber:53}},
+onPress:function onPress(e){return _this._handlePress(e,dataPoint,index);}},
 
 _react2.default.createElement(_reactNative.View,{style:{
 paddingRight:2,
-paddingLeft:2},__source:{fileName:_jsxFileName,lineNumber:57}},
+paddingLeft:2}},
 
 _react2.default.createElement(_reactNative.Text,{style:{
-textAlign:'center'},__source:{fileName:_jsxFileName,lineNumber:61}},
+textAlign:'center'}},
 dataPoint,'%'),
 _react2.default.createElement(_reactNative.View,{
 style:{
@@ -67,11 +67,11 @@ borderTopLeftRadius:_this.props.cornerRadius||0,
 borderTopRightRadius:_this.props.cornerRadius||0,
 backgroundColor:backgroundColor,
 width:width,
-height:height},__source:{fileName:_jsxFileName,lineNumber:64}}),
+height:height}}),
 
 
 _react2.default.createElement(_reactNative.Text,{style:{
-textAlign:'center'},__source:{fileName:_jsxFileName,lineNumber:73}},
+textAlign:'center'}},
 _x))));
 
 
@@ -82,8 +82,8 @@ _x))));
 {
 var data=this.props.data||[];
 return(
-_react2.default.createElement(_reactNative.View,{ref:'container',style:[styles.default],__source:{fileName:_jsxFileName,lineNumber:85}},
-_react2.default.createElement(_Grid2.default,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:86}})),
+_react2.default.createElement(_reactNative.View,{ref:'container',style:[styles.default]},
+_react2.default.createElement(_Grid2.default,this.props),
 data.map(this._drawBar)));
 
 
