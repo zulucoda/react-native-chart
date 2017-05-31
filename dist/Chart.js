@@ -242,7 +242,7 @@ maxVerticalBound:_this2.state.bounds.max,__source:{fileName:_jsxFileName,lineNum
 Chart.propTypes={
 
 
-type:_react.PropTypes.oneOf(['line','bar','pie']).isRequired,
+type:_react.PropTypes.oneOf(['line','bar','pie','bar2']).isRequired,
 highlightColor:_react.PropTypes.oneOfType([_react.PropTypes.number,_react.PropTypes.string]),
 highlightIndices:_react.PropTypes.arrayOf(_react.PropTypes.number),
 onDataPointPress:_react.PropTypes.func,

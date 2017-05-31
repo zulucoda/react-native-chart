@@ -242,7 +242,7 @@ export default class Chart extends Component<void, any, any> {
 Chart.propTypes = {
 	// Shared properties between most types
 	// data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.array)).isRequired,
-	type: PropTypes.oneOf(['line', 'bar', 'pie']).isRequired,
+	type: PropTypes.oneOf(['line', 'bar', 'pie', 'bar2']).isRequired,
 	highlightColor: PropTypes.oneOfType([PropTypes.number, PropTypes.string]), // TODO
 	highlightIndices: PropTypes.arrayOf(PropTypes.number), // TODO
 	onDataPointPress: PropTypes.func,
